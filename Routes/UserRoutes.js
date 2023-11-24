@@ -13,5 +13,6 @@ userroutes.get('/fetchuser/:id',tryCatchMiddleware(controller.fetchuserById))
 userroutes.post('/updateprofile/:id',jwtuser,tryCatchMiddleware(controller.editUserprofile))
 userroutes.post('/userquestions',tryCatchMiddleware(controller.showuserquestions))
 userroutes.post('/deleteuser',tryCatchMiddleware(controller.deleteprofile))
+userroutes.get('/getuser',jwtuser,tryCatchMiddleware(controller.userDetails))
 
 module.exports=userroutes

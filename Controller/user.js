@@ -176,7 +176,20 @@ module.exports={
         } catch (error) {
             
         }
-    }
+    },
+    userDetails: async (req, res) => {
+        console.log(req.body);
+        const user = await UserSchema.find({ _id: res.token.id })
+        console.log(user);
+        if (user) {
+          res.json({
+            status: "success",
+            message: "fetched successfully",
+            data: user[0],
+          });
+        }
+      },
+    
     
     
 }
